@@ -25,6 +25,11 @@ async function run() {
             const cursor = packageCollection.find({});
             const result = await cursor.toArray();
             res.send(result);
+        });
+
+        // Get Specific Api
+        app.get('/packages/:id', async(req,res)=>{
+            
         })
     }
     finally{
