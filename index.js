@@ -35,6 +35,14 @@ async function run() {
             const result = await packageCollection.findOne(query);
             res.send(result);
         });
+
+        // Post Api 
+        app.post('/mybooking', async(req, res)=>{
+            const newBooking = req.body;
+            console.log(newBooking);
+            const result = await packageCollection.insertOne(newBooking);
+            res.json(result);
+        })
     }
     finally{
         // await client.close();
